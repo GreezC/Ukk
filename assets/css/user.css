@@ -1,0 +1,177 @@
+body {
+  margin:0;
+  font-family:Segoe UI;
+  background:#0f172a;
+  color:white;
+}
+
+.layout {
+  display:flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width:220px;
+  height:100vh;
+  background:#111827;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+}
+
+.sidebar h2 {
+  margin-bottom:30px;
+}
+
+.sidebar a {
+  color:#cbd5e1;
+  text-decoration:none;
+  padding:10px;
+  border-radius:6px;
+  margin-bottom:10px;
+}
+
+.sidebar a:hover,
+.sidebar .active {
+  background:#1e293b;
+}
+
+.logout {
+  margin-top:auto;
+}
+
+.logout a {
+  background:#dc2626;
+  display:block;
+  text-align:center;
+}
+
+/* CONTENT */
+.content {
+  flex:1;
+  padding:30px;
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.card {
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+}
+
+/* BUTTON */
+.btn {
+  padding:8px 14px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+  color:white;
+}
+
+.btn-success { background:#22c55e; }
+.btn-primary { background:#3b82f6; }
+
+.badge {
+  background:#06b6d4;
+  padding:5px 10px;
+  border-radius:20px;
+}
+
+/* MODAL */
+.modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-content {
+  background:#1e293b;
+  padding:30px;
+  width:400px;
+  border-radius:10px;
+}
+
+.close {
+  float:right;
+  cursor:pointer;
+  font-size:20px;
+}
+
+input, textarea {
+  width:100%;
+  padding:8px;
+  margin:8px 0;
+  border-radius:6px;
+  border:none;
+}
+
+//riwayat
+
+/* RIWAYAT */
+.history-card {
+  background:#1e293b;
+  padding:25px;
+  border-radius:15px;
+  margin-top:20px;
+}
+
+.history-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.history-header h3 {
+  margin:0;
+}
+
+.history-header small {
+  color:#94a3b8;
+}
+
+.badge-success {
+  background:#10b981;
+  padding:6px 15px;
+  border-radius:20px;
+  font-size:14px;
+}
+
+.history-body {
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.history-left {
+  flex:2;
+}
+
+.history-right {
+  flex:1;
+  text-align:center;
+}
+
+.box {
+  background:#0f172a;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+
+.history-img {
+  width:120px;
+  border-radius:10px;
+  margin-top:10px;
+}
