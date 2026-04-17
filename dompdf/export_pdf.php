@@ -72,7 +72,11 @@ $data = reset($laporan);
 
 $total = $data['total_pengaduan'] ?? 0;
 $selesai = $data['selesai'] ?? 0;
-$persen = $total > 0 ? round(($selesai / $total) * 100) : 0;
+$ditolak = $data['ditolak'] ?? 0;
+
+$persen = $total > 0
+    ? round((($selesai + $ditolak) / $total) * 100)
+    : 0;
 
 $dompdf = new Dompdf();
 
@@ -95,7 +99,7 @@ ob_start();
     <td>Diproses</td>
     <td>Selesai</td>
     <td>Ditolak</td>
-    <td>% Selesai</td>
+    <td>Progress</td>
 </tr>
 <tr>
     <td><?= $total ?></td>

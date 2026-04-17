@@ -7,9 +7,10 @@ $user_id = $_SESSION['user_id'];
 
 // Mengambil data pengaduan milik user 
 $data_pengaduan = mysqli_query($conn, "
-    SELECT p.*, s.nama_prasarana
+    SELECT p.*, s.nama_prasarana, k.nama_kategori
     FROM pengaduan p
     JOIN prasarana s ON p.prasarana_id = s.id
+    JOIN kategori k ON p.kategori_id = k.id
     WHERE p.user_id = '$user_id'
     AND p.status IN ('diajukan', 'diproses')
     ORDER BY CASE 
@@ -115,6 +116,13 @@ ob_start();
                                         <p class="text-slate-700 flex items-center gap-1.5 font-medium">
                                             <img src="../assets/icons/loc.svg" class="w-4 h-4">
                                             <?= htmlspecialchars($pengaduan['nama_prasarana']) ?>
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-slate-500 mb-1.5">Kategori</h4>
+                                        <p class="text-slate-700 flex items-center gap-1.5 font-medium">
+                                            <img src="../assets/icons/kat.svg" class="w-4 h-4">
+                                            <?= htmlspecialchars($pengaduan['nama_kategori']) ?>
                                         </p>
                                     </div>
                                     

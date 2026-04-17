@@ -109,7 +109,7 @@ if (isset($_SESSION['role'])) {
           </div>
           <div>
             <p class="text-[11px] text-slate-400 font-semibold uppercase tracking-wider mb-0.5">Email Admin</p>
-            <p class="text-[15px] font-semibold text-slate-700">admin@sekolah.com</p>
+            <p class="text-[15px] font-semibold text-slate-700">adang@smkn1cisarua.com</p>
           </div>
         </a>
         

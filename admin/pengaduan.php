@@ -16,6 +16,7 @@ if ($search !== '') {
         p.judul LIKE '%$safe_search%' OR
         p.deskripsi LIKE '%$safe_search%' OR
         s.nama_prasarana LIKE '%$safe_search%' OR
+        k.nama_kategori LIKE '%$safe_search%' OR
         p.id LIKE '%$safe_search%'
     )";
 }

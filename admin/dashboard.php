@@ -66,6 +66,7 @@ $laporan_final = [];
 foreach ($laporan as $data_bulan) {
     $total_pengaduan = $data_bulan['total_pengaduan'];
     $selesai_count = $data_bulan['selesai'];
+    $ditolak_count = $data_bulan['ditolak'];
     $laporan_final[] = [
         'bulan' => $data_bulan['bulan'],
         'bulan_short' => $data_bulan['bulan_short'],
@@ -74,8 +75,10 @@ foreach ($laporan as $data_bulan) {
         'diajukan' => $data_bulan['diajukan'],
         'diproses' => $data_bulan['diproses'],
         'selesai' => $selesai_count,
-        'ditolak' => $data_bulan['ditolak'],
-        'persen_selesai' => $total_pengaduan > 0 ? round(($selesai_count / $total_pengaduan) * 100) : 0,
+        'ditolak' => $ditolak_count,
+        'persen_selesai' => ($total_pengaduan - $ditolak_count) > 0
+    ? round(($selesai_count / ($total_pengaduan - $ditolak_count)) * 100)
+    : 0,
     ];
 }
 

@@ -202,7 +202,7 @@ $rata = round($rata);
 
             <ul class="steps steps-vertical lg:steps-horizontal w-full">
                 <li class="step step-primary">Login</li>
-                <li class="step ">Memilih Sarana</li>
+                <li class="step ">Memilih Prasarana</li>
                 <li class="step">Isi Pengaduan</li>
                 <li class="step ">Diproses</li>
                 <li class="step ">Selesai</li>

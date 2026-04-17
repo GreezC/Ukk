@@ -15,7 +15,7 @@ $prasarana_id = '';
 if ($id) {
     // MODE EDIT
     $query = mysqli_query($conn, "
-        SELECT p.*, s.nama_prasarana
+        SELECT p.*, s.nama_prasarana, s.lokasi
         FROM pengaduan p
         JOIN prasarana s ON p.prasarana_id = s.id
         WHERE p.id='$id'
@@ -27,6 +27,7 @@ if ($id) {
 
     if ($pengaduan) {
         $nama_prasarana = $pengaduan['nama_prasarana'];
+        $lokasi = $pengaduan['lokasi'];
         $prasarana_id = $pengaduan['prasarana_id'];
     }
 } elseif ($prasarana_get) {
@@ -38,6 +39,7 @@ if ($id) {
 
     if ($dataPrasarana) {
         $nama_prasarana = $dataPrasarana['nama_prasarana'];
+        $lokasi = $dataPrasarana['lokasi'];
         $prasarana_id = $dataPrasarana['id'];
     }
 }
@@ -58,10 +60,16 @@ if ($id) {
         </p>
 
         <!-- INFO SARANA -->
-        <div class="mb-4">
+        <div>
             <span class="font-medium">Prasarana dipilih:</span>
             <span class="ml-1 font-bold">
                 <?= htmlspecialchars($nama_prasarana) ?>
+            </span>
+        </div>
+        <div class="mb-4">
+            <span class="font-medium">lokasi:</span>
+            <span class="ml-1 font-bold">
+                <?= htmlspecialchars($lokasi) ?>
             </span>
         </div>
 
@@ -135,7 +143,7 @@ if ($id) {
             <div class="form-control mb-4">
                 <label class="label">
                     <span class="label-text font-medium">
-                        Foto Pendukung (Opsional)
+                        Foto Bukti
                     </span>
                 </label>
                 <input type="file"
@@ -159,7 +167,7 @@ if ($id) {
 
             <!-- ACTION -->
             <div class="modal-action">
-                <a href="status.php" class="btn btn-ghost">
+                <a href="dashboard.php" class="btn btn-ghost">
                     Batal
                 </a>
 
